@@ -1,0 +1,23 @@
+{% extends 'poll/base.html' %}
+
+{% block title %}
+ Result
+{% endblock title %}
+
+{% block body %}
+
+
+<div class="container border border-danger my-3">
+    <div class="container my-3">
+            <h3>{{ object.question }}</h3>
+            <br>
+            <h6>{{ object.option_1 }}-------{{ object.option_1_count }}</h6>
+            <br>
+            <h6>{{ object.option_2 }}-------{{ object.option_2_count }}</h6>
+            <br>
+            <h6>{{ object.option_3 }}-------{{ object.option_3_count }}</h6>
+    </div>
+</div>
+
+
+{% endblock body %}

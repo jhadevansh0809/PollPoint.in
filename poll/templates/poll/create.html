@@ -1,0 +1,21 @@
+{% extends 'poll/base.html' %}
+{% load crispy_forms_tags %}
+{% block title %}
+   Create Poll
+{% endblock title %}
+
+{% block body %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+   <div class="container border border-danger my-3">
+    <div class="container my-3">
+        {{ form|crispy }}
+        <br>
+        <button type="button submit" class="btn btn-primary">Create Poll</button>
+    </div>
+</div>
+    
+</form>
+
+{% endblock body %}

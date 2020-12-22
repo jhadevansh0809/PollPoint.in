@@ -1,0 +1,29 @@
+{% extends 'poll/base.html' %}
+
+{% block title %}
+   Home
+{% endblock title %}
+
+{% block body %}
+
+
+{% for q in object_list %}
+<div class="container my-4">
+<div class="card border border-danger">
+    <div class="card-body">
+        <h3>{{ q.question }}</h3>
+        <small>1.{{ q.option_1 }}</small>
+        <br>
+        <small>2.{{ q.option_2 }}</small>
+        <br>
+        <small>3.{{ q.option_3 }}</small>
+        <br>
+        <br>
+        <a href="{% url 'vote' q.id %}"><button type="button" class="btn btn-primary">Vote</button></a>
+        <a href="{% url 'result' q.id %}"><button type="button" class="btn btn-dark">Result</button></a>
+    </div>
+  </div>
+</div>
+{% endfor %}
+
+{% endblock body %}
